@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Warung Bakso & Mie Ayam Idola</title>
+  <style>
+    /* Reset sederhana */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height:100%; font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#fafafa; color:#222; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Header */
+    .header {
+      background: linear-gradient(90deg,#ff6b6b,#ffae42);
+      color: white;
+      padding: 18px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .logo {
+      width:60px;height:60px;border-radius:12px;
+      background:rgba(255,255,255,0.18);
+      display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .title { font-size:20px; font-weight:700; letter-spacing:0.2px; }
+    .subtitle { font-size:12px; opacity:0.95; }
+
+    /* Layout */
+    .container { max-width:1100px; margin:22px auto; padding:0 18px; }
+    .hero {
+      background-image: url("New folder/background.jpeg");
+      background-size:cover; background-position:center;
+      border-radius:12px; height:300px; display:flex; align-items:center; padding:28px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      color: white;
+    }
+    .hero .card { background: rgba(0,0,0,0.35); padding:18px; border-radius:10px; }
+    .hero h1 { font-size:28px; margin-bottom:6px; }
+    .hero p { opacity:0.95; }
+
+    /* Menu */
+    .section { margin-top:28px; }
+    h2.section-title { font-size:20px; margin-bottom:12px; color:#333; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+
+    .menu-card {
+      background:white; border-radius:10px; padding:12px; display:flex; gap:12px; align-items:center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    .menu-card img { width:84px; height:64px; object-fit:cover; border-radius:8px; }
+    .menu-info { flex:1; }
+    .menu-name { font-weight:700; font-size:15px; color:#111; }
+    .menu-desc { font-size:13px; color:#666; margin-top:4px; }
+    .menu-price { font-weight:700; color:#e63946; margin-left:6px; }
+
+    /* Gallery */
+    .gallery { display:grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin-top:10px; }
+    .photo { border-radius:10px; overflow:hidden; background:#eee; height:120px; }
+    .photo img { width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* Footer */
+    footer { margin-top:28px; text-align:center; color:#555; font-size:14px; padding:24px 12px; }
+
+    /* Floating music control */
+    .music-control {
+      position:fixed; right:16px; bottom:16px; z-index:999;
+      background:white; padding:10px 12px; border-radius:999px; box-shadow:0 8px 20px rgba(0,0,0,0.12); display:flex; gap:10px; align-items:center;
+    }
+    .music-btn { background:#1a73e8; color:white; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:700; }
+    .music-btn:active { transform:translateY(1px); }
+    .small { font-size:13px; color:#444; }
+
+    /* Responsive tweaks */
+    @media (max-width:600px) {
+      .hero { height:220px; padding:16px; }
+      .logo { width:48px; height:48px; font-size:18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">
+      <div class="logo">ID</div>
+      <div>
+        <div class="title">Warung Bakso & Mie Ayam <strong>Idola</strong></div>
+        <div class="subtitle">Mie kenyal • Bakso gurih • Minuman menyegarkan</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#menu" style="margin-right:12px;font-weight:700;color:#fff">Menu</a>
+      <a href="#gallery" style="margin-right:12px;color:#fff">Galeri</a>
+      <a href="#kontak" style="color:#fff">Kontak</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h1>Selamat Datang di Warung <span style="color:#ffd166">Idola</span></h1>
+        <p>Rasakan hangatnya kuah dan kelezatan bakso pilihan — tempat nongkrong keluarga & teman. "Spesial Kuah Pedas.</p>
+        <div style="margin-top:8px;">
+          <a href="#menu" style="background:#ffd166;padding:8px 12px;border-radius:8px;font-weight:700;">Lihat Menu & Pesan</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="section">
+      <h2 class="section-title">Menu Mie & Bakso</h2>
+      <div class="grid">
+        <!-- Mie items -->
+        <div class="menu-card">
+          <img src="New folder/miayam ori.jpeg" alt="Mie Ayam Original">
+          <div class="menu-info">
+            <div class="menu-name">Mie Ayam Original <span class="menu-price">Rp10.000</span></div>
+            <div class="menu-desc">Mie kenyal, ayam suwir, kuah gurih.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/miyago.jpeg" alt="Mie Ayam Goreng">
+          <div class="menu-info">
+            <div class="menu-name">Mie Ayam Goreng <span class="menu-price">Rp13.000</span></div>
+            <div class="menu-desc">Mie digoreng bumbu khas Idola.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/miayam pangsit.jpeg" alt="Mie Ayam Pangsit">
+          <div class="menu-info">
+            <div class="menu-name">Mie Ayam Pangsit <span class="menu-price">Rp11.000</span></div>
+            <div class="menu-desc">Pangsit renyah sebagai pelengkap.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/miayam bakso.jpeg" alt="Mie Ayam Bakso">
+          <div class="menu-info">
+            <div class="menu-name">Mie Ayam Bakso <span class="menu-price">Rp15.000</span></div>
+            <div class="menu-desc">Kombinasi mie ayam dan bakso pilihan.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/mie soker.jpeg" alt="Mie Ayam Bakso Ceker">
+          <div class="menu-info">
+            <div class="menu-name">Mie Ayam Bakso Ceker <span class="menu-price">Rp17.000</span></div>
+            <div class="menu-desc">Tambahan bakso dan ceker yang lezat dan empuk.</div>
+          </div>
+
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/miekoso.jpeg" alt="Mie Ayam Mangkok Bakso">
+          <div class="menu-info">
+            <div class="menu-name">Mie Ayam Mangkok Bakso <span class="menu-price">Rp18.000</span></div>
+            <div class="menu-desc">Dengan bakso berbentuk mangkok yang nagih.</div>
+          </div>
+         
+        </div>
+
+        <!-- Bakso items -->
+        <div class="menu-card">
+          <img src="New folder/bakso ori.jpeg" alt="Bakso Original">
+          <div class="menu-info">
+            <div class="menu-name">Bakso Original <span class="menu-price">Rp10.000</span></div>
+            <div class="menu-desc">Bakso kenyal klasik.</div>
+          </div>
+         
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/bakso beranak.jpeg" alt="Bakso Beranak">
+          <div class="menu-info">
+            <div class="menu-name">Bakso Beranak <span class="menu-price">Rp13.000</span></div>
+            <div class="menu-desc">Bakso besar berisi bakso mini dan telur puyuh.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/bakso urat.jpeg" alt="Bakso Urat">
+          <div class="menu-info">
+            <div class="menu-name">Bakso Urat <span class="menu-price">Rp14.000</span></div>
+            <div class="menu-desc">Tekstur kenyal dari urat sapi.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/bakso setan.jpeg" alt="Bakso Setan">
+          <div class="menu-info">
+            <div class="menu-name">Bakso Setan <span class="menu-price">Rp13.000</span></div>
+            <div class="menu-desc"> Bakso isi sambal pedas menggigit bagi yang berani.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/bakso telur.jpeg" alt="Bakso Telur">
+          <div class="menu-info">
+            <div class="menu-name">Bakso Telur <span class="menu-price">Rp13.000</span></div>
+            <div class="menu-desc">Bakso isi telur ayam, gurih & memuaskan.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/bakso ambyar.jpeg" alt="Bakso Ambyar">
+          <div class="menu-info">
+            <div class="menu-name">Bakso Ambyar <span class="menu-price">Rp13.000</span></div>
+            <div class="menu-desc">cocok untuk yang habis putus cinta wkwk.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/bakso keju.jpeg" alt="Bakso Keju">
+          <div class="menu-info">
+            <div class="menu-name">Bakso Keju <span class="menu-price">Rp16.000</span></div>
+            <div class="menu-desc">Bakso isi lelehan keju, lumer saat digigit.</div>
+          </div>
+
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/bakso mangkok.jpeg" alt="Bakso Mangkok">
+          <div class="menu-info">
+            <div class="menu-name">Bakso Mangkok <span class="menu-price">Rp16.000</span></div>
+            <div class="menu-desc">Bakso berbentuk mangkok yang besar, gurih, nagih saat digigit.</div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- MINUMAN -->
+    <section class="section">
+      <h2 class="section-title">Minuman Dingin & Hangat</h2>
+      <div class="grid">
+        <div class="menu-card">
+          <img src="New folder/es teh.jpeg" alt="Es Teh">
+          <div class="menu-info">
+            <div class="menu-name">Es / Hangat Teh <span class="menu-price">Rp3.000</span></div>
+            <div class="menu-desc">Teh segar, tersedia es atau hangat.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/kopi.jpeg" alt="Kopi Hitam">
+          <div class="menu-info">
+            <div class="menu-name">Kopi Hitam <span class="menu-price">Rp4.000</span></div>
+            <div class="menu-desc">Sari pati biji kopi pilihan, memberi ketenangan.</div>
+          </div>
+
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/pop ice.jpeg" alt="Pop Ice">
+          <div class="menu-info">
+            <div class="menu-name">Pop Ice <span class="menu-price">Rp4.000</span></div>
+            <div class="menu-desc">Minumam pop kesukaan bocil.</div>
+          </div>
+
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/es micin.jpeg" alt="Es Micin">
+          <div class="menu-info">
+            <div class="menu-name">Ice Micin <span class="menu-price">Rp5.000</span></div>
+            <div class="menu-desc">Minuman unik dan menyegarkan.</div>
+          </div>
+
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/es jeruk.jpeg" alt="Es Jeruk">
+          <div class="menu-info">
+            <div class="menu-name">Es Jeruk <span class="menu-price">Rp4.000</span></div>
+            <div class="menu-desc">Jeruk peras segar, memberi kesegaran.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/es capcin.jpeg" alt="Es Cappucinno Cincau">
+          <div class="menu-info">
+            <div class="menu-name">Es Capcin <span class="menu-price">Rp5.000</span></div>
+            <div class="menu-desc">Es cappuccino dan cincau khas — manis & creamy.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/es bucin.jpeg" alt="Es Bucin">
+          <div class="menu-info">
+            <div class="menu-name">Es Bucin <span class="menu-price">Rp5.000</span></div>
+            <div class="menu-desc">Minuman hits kekinian, kombinasi buah dan cincau yang manis dan segar.</div>
+          </div>
+
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/lemontea.jpeg" alt="Es Lemon Tea">
+          <div class="menu-info">
+            <div class="menu-name">Es Lemon Tea <span class="menu-price">Rp5.000</span></div>
+            <div class="menu-desc">Minuman segar yang kecut seperti hidupmu.</div>
+          </div>
+
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/nutrisari.jpeg" alt="Es Nutrisari">
+          <div class="menu-info">
+            <div class="menu-name">Es Nutrisari <span class="menu-price">Rp4.000</span></div>
+            <div class="menu-desc">Minuman instan segar dan menyegarkan.</div>
+          </div>
+
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/teajus.jpeg" alt="Es Tea Jus">
+          <div class="menu-info">
+            <div class="menu-name">Es Tea Jus <span class="menu-price">Rp2.000</span></div>
+            <div class="menu-desc">Minuman instan murmer segar dan menyegarkan.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/es teller.jpeg" alt="Es Teller Original">
+          <div class="menu-info">
+            <div class="menu-name">Es Teller Original<span class="menu-price">Rp10.000</span></div>
+            <div class="menu-desc">Es segar dengan potongan buah & sirup.</div>
+          </div>
+
+        </div>
+         
+        <div class="menu-card">
+          <img src="New folder/es teller keju.jpeg" alt="Es Teller Keju">
+          <div class="menu-info">
+            <div class="menu-name">Es Teller Keju<span class="menu-price">Rp12.000</span></div>
+            <div class="menu-desc">Es segar dengan potongan buah, sirup dan keju.</div>
+          </div>
+          
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/es cemil.jpeg" alt="Es Cemil">
+          <div class="menu-info">
+            <div class="menu-name">Es Cemil  <span class="menu-price">Rp10.000</span></div>
+            <div class="menu-desc">Es creamy segar dengan topping yang unik.</div>
+          </div>
+
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/es teller spesial.jpeg" alt="Ice Teller Spesial">
+          <div class="menu-info">
+            <div class="menu-name">Es Teller Spesial<span class="menu-price">Rp15.000</span></div>
+            <div class="menu-desc">Es creamy segar dengan potongan buah, sirup dan sangat banyak topping hingga spesial.</div>
+          </div>
+
+        </div>
+
+        <div class="menu-card">
+          <img src="New folder/aneka jus.jpeg" alt="Aneka Jus Buah">
+          <div class="menu-info">
+            <div class="menu-name">Aneka Jus Buah <span class="menu-price">Rp5.000</span></div>
+            <div class="menu-desc">Jus mangga, stroberi, alpukat,buah naga, melon, DLL.</div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="kontak" class="section">
+      <h2 class="section-title">Kontak & Lokasi</h2>
+      <div style="background:white;border-radius:10px;padding:14px;box-shadow:0 8px 20px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:8px;">
+        <div><strong>Alamat:</strong> Jl. Kyai Melati Ngandong RT01 RW09, Plososari, Patean, Kendal.</div>
+        <div><strong>Jam Buka:</strong> 10:00 WIB - Habis. (Jum'at Tutup)</div>
+        <div><strong>Telepon/WA:</strong> 0822 3673 9696.</div>
+        <div><strong>Delivery:</strong> Terdapat Minimum Order.</div>
+        
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Follow Instagram @troy.2kd
+    </footer>
+  </main>
+    <footer>
+      © <span id="year"></span> Warung Bakso & Mie Ayam Idola — Happy Order!
+    </footer>
+  </main>
+
+
+
+
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tombol WhatsApp Otomatis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding-top: 80px;
+    }
+    .btn-wa {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    .btn-wa:hover {
+      background-color: #1ebd5b;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🍜 Warung Bakso & Mie Ayam Idola 🍜</h2>
+  <p>Klik tombol di bawah ini untuk memesan langsung via WhatsApp 👇</p>
+
+  <button class="btn-wa" id="pesanWA">💬 Pesan via WhatsApp</button>
+
+  <script>
+    document.getElementById("pesanWA").addEventListener("click", function() {
+      // Nomor WhatsApp tujuan (tanpa tanda +)
+      const nomorWA = "6282236739696"; // GANTI dengan nomor WhatsApp kamu
+
+      // Isi pesan otomatis
+      const pesan = 
+        "Halo Warung Bakso & Mie Ayam Idola!%0A" +
+        "Saya ingin memesan:%0A" +
+        "- Mie Ayam Pangsit (2x)%0A" +
+        "- Bakso Beranak (1x)%0A" +
+        "- Es Jeruk (2x)%0A%0A" +
+        "Nama: Adnan%0A" +
+        "Alamat: Jl. Melati No. 12, Cirebon%0A%0A" +
+        "Terima kasih! 🙏";
+
+      // Membuka WhatsApp otomatis dengan pesan yang sudah diisi
+      const url = `https://wa.me/${nomorWA}?text=${pesan}`;
+      window.open(url, "_blank");
+    });
+  </script>
+
+</body>
+</html>
